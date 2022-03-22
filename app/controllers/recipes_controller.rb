@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1
   def update
-  @recipe.update!
+  @recipe.update!(recipe_params)
       render json: @recipe
    
   end
@@ -43,3 +43,4 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(:name, :ingredient, :cooking_Instructions)
     end
 end
+ 
